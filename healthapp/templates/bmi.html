@@ -1,0 +1,18 @@
+{% extends "health_app/base.html" %}
+{% block body_block %}
+<div class="jumbotron" style="text-align: center; margin-top: 80px">
+<h2 style="font-family: times">BMI Calculator</h2>
+    <br>
+    <form method="POST">
+        <label for="Username" style="font-family: times; font-weight: bold">Height : </label>
+        <input type="text" name="height" placeholder="Enter height" required>
+
+        <br><br>
+
+        <label for="Password" style="font-family: times; font-weight: bold">Weight : </label>
+        <input type="password" name="weight" placeholder="Enter weight" required>
+        <br><br>
+        <input type="submit" value="Calculate BMI" class="btn btn-primary">
+    </form>
+</div>
+{% endblock %}

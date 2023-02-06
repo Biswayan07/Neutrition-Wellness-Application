@@ -1,0 +1,26 @@
+{% load static%}
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav justify-content-end">
+    <li class="nav-item active">
+      <a class="nav-link">Nutrition and Wellness</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link pl-4" href="{% url 'bmi' %}" >Calculate BMI</a>
+    </li>
+  </ul>
+    <ul class="navbar-nav ml-auto">
+
+
+    {% if user.is_authenticated %}
+    <li class="=nav-item">
+        <a class="nav-link active pl-4" href="{% url 'logout' %}">Logout</a>
+    </li>
+
+      {% else %}
+      <li class="nav-item">
+          <a class="nav-link active pl-4" href="{% url 'login' %}">Login</a>
+      </li>
+    {% endif %}
+      </ul>
+</nav>

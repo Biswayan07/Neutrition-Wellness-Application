@@ -1,0 +1,20 @@
+{% extends "health_app/base.html" %}
+{% block body_block %}
+<br>
+<div class="jumbotron" style="margin-top: 80px">
+    <div style="text-align: center">
+    {% if registered %}
+    <h1>Thanks for Registration</h1>
+    {% else %}
+    <h1 style="font-family: times">Register here</h1> <br>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+    <div style="font-family: times; font-weight: bold">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        <input type="submit" value="Register" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+{% endif %}
+{% endblock %}

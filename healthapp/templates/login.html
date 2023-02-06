@@ -1,0 +1,21 @@
+{% extends 'health_app/base.html' %}
+{% block body_block %}
+<br>
+<div class="jumbotron" style="text-align: center; margin-top:80px">
+    <h1 style="font-family: times">Login Here</h1>
+    <br>
+    <form method="POST" action="{% url 'health_app:user_login' %}">
+        {% csrf_token %}
+        <label for="Username" style="font-family: times; font-weight: bold">Username : </label>
+        <input type="text" name="username" placeholder="Enter Username" required>
+
+        <br><br>
+
+        <label for="Password" style="font-family: times; font-weight: bold">Password : </label>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <br><br>
+        <input type="submit" value="Login" class="btn btn-primary">
+    </form>
+
+</div>
+{% endblock %}
